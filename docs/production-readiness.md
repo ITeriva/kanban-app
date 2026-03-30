@@ -25,6 +25,7 @@
 - `PROD_BOOTSTRAP_ADMIN_EMAIL`: e-mail real do admin inicial
 - `PROD_BOOTSTRAP_ADMIN_TITLE`: opcional
 - `PROD_BOOTSTRAP_ADMIN_PASSWORD`: opcional. Se omitida, usa `Senha123!` e força troca no primeiro login
+  Use a senha em texto puro. Não envie caracteres URL-encoded como `%23` no lugar de `#`.
 
 ## Prisma
 
@@ -70,6 +71,7 @@ Não cria dados fake. O comportamento é:
    - `PROD_BOOTSTRAP_ADMIN_EMAIL`
    - `PROD_BOOTSTRAP_ADMIN_TITLE`
    - `PROD_BOOTSTRAP_ADMIN_PASSWORD` se quiser evitar a senha padrão
+   - se a senha tiver `#`, `@` ou outros caracteres especiais, informe o valor literal no painel do Netlify
 4. Use `npm run build` como build command.
 5. Aplique as migrations antes do deploy final ou em etapa separada do pipeline com `npm run db:migrate:deploy`.
 6. Não envie `.env` local para o Netlify. Toda credencial de produção deve ficar no painel de environment variables.
