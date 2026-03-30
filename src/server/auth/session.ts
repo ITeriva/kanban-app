@@ -5,7 +5,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { db } from "@/server/db";
 
-const SESSION_COOKIE_NAME = "kanban-tcc-session";
+const SESSION_COOKIE_NAME = "ops-board-session";
 
 async function setSessionCookie(sessionToken: string, expiresAt: Date) {
   const cookieStore = await cookies();
