@@ -115,7 +115,7 @@ export function SidebarNav({
                   ? alpha(theme.palette.secondary.main, theme.palette.mode === "dark" ? 0.14 : 0.07)
                   : "transparent",
                 borderColor: selected ? alpha(theme.palette.secondary.main, 0.28) : "transparent",
-                boxShadow: selected && collapsed ? "0 14px 28px rgba(93, 5, 255, 0.14)" : "none",
+                boxShadow: selected && collapsed ? "0 14px 28px rgba(65, 108, 228, 0.14)" : "none",
               })}
             >
               <ListItemIcon

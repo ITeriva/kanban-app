@@ -4,6 +4,7 @@ import { GlobalRole } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { MIN_PASSWORD_LENGTH, PLATFORM_RESET_PASSWORD } from "@/lib/auth";
+import { appBrand, buildPlatformEmail } from "@/lib/branding";
 import { hashPassword, verifyPassword } from "@/server/auth/password";
 import { requireUser } from "@/server/auth/session";
 import { db } from "@/server/db";
@@ -91,8 +92,7 @@ function slugifyUserSegment(value: string) {
 
 async function createUniquePlatformEmail(firstName: string, lastName: string) {
   const localBase = `${slugifyUserSegment(firstName)}.${slugifyUserSegment(lastName)}`;
-  const domain = "rolezito.com";
-  const baseEmail = `${localBase}@${domain}`;
+  const baseEmail = buildPlatformEmail(localBase);
   const existingUsers = await db.user.findMany({
     where: {
       email: {
@@ -111,19 +111,19 @@ async function createUniquePlatformEmail(firstName: string, lastName: string) {
   const occupiedEmails = new Set(existingUsers.map((user) => user.email));
   let suffix = 2;
 
-  while (occupiedEmails.has(`${localBase}.${suffix}@${domain}`)) {
+  while (occupiedEmails.has(buildPlatformEmail(`${localBase}.${suffix}`))) {
     suffix += 1;
   }
 
-  return `${localBase}.${suffix}@${domain}`;
+  return buildPlatformEmail(`${localBase}.${suffix}`);
 }
 
 function getDefaultTitleForRole(role: GlobalRole) {
   return {
-    ADMIN: "Admin do workspace",
-    MEMBER: "Membro do grupo",
-    COLLABORATOR: "Colaborador",
-    ADVISOR: "Orientadora",
+    ADMIN: appBrand.bootstrapAdminTitle,
+    MEMBER: "Operação da squad",
+    COLLABORATOR: "Colaboração de apoio",
+    ADVISOR: "Gestão",
   }[role];
 }
 

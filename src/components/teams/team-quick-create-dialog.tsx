@@ -23,6 +23,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
+import { appBrand } from "@/lib/branding";
 import { createTeamAction } from "@/server/actions/teams";
 
 type TeamQuickCreateDialogProps = {
@@ -137,12 +138,12 @@ export function TeamQuickCreateDialog({
               variant="overline"
               sx={{ color: "secondary.main", letterSpacing: "0.16em" }}
             >
-              Organização do grupo
+              Operação da squad
             </Typography>
             <Box>
               <Typography variant="h3">Nova equipe</Typography>
               <Typography color="text.secondary" sx={{ mt: 0.65 }}>
-                Crie uma frente do Rolezito com nome, escopo e pessoas responsáveis.
+                Crie uma frente da squad com nome, escopo e pessoas responsáveis.
               </Typography>
             </Box>
           </Stack>
@@ -166,7 +167,7 @@ export function TeamQuickCreateDialog({
               label="Resumo"
               multiline
               minRows={3}
-              placeholder="Explique rapidamente o papel desta equipe no desenvolvimento do Rolezito."
+              placeholder={`Explique rapidamente o papel desta equipe dentro do ${appBrand.name}.`}
               value={form.summary}
               onChange={(event) =>
                 setForm((current) => ({ ...current, summary: event.target.value }))

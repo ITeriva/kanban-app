@@ -44,7 +44,7 @@ export function FlowCanvasShell({
           borderBottom: "1px solid",
           borderColor: "divider",
           background:
-            "radial-gradient(circle at top left, rgba(93, 5, 255, 0.10), transparent 26%), radial-gradient(circle at bottom right, rgba(255, 187, 0, 0.10), transparent 22%)",
+            "radial-gradient(circle at top left, rgba(65, 108, 228, 0.10), transparent 26%), radial-gradient(circle at bottom right, rgba(212, 87, 104, 0.10), transparent 22%)",
         }}
       >
         <Stack

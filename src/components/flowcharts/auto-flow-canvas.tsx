@@ -272,7 +272,7 @@ function AutoFlowCanvasInner({
               type: MarkerType.ArrowClosed,
               width: 22,
               height: 22,
-              color: edgeHighlighted ? "#FFBB00" : "#5D05FF",
+              color: edgeHighlighted ? "#D45768" : "#416CE4",
             },
             data: {
               accent: edgeHighlighted ? "gold" : "violet",
@@ -444,7 +444,7 @@ function AutoFlowCanvasInner({
       sx={{
         height: 720,
         background:
-          "radial-gradient(circle at top, rgba(93, 5, 255, 0.06), transparent 24%), radial-gradient(circle at bottom right, rgba(255, 187, 0, 0.08), transparent 20%)",
+          "radial-gradient(circle at top, rgba(65, 108, 228, 0.06), transparent 24%), radial-gradient(circle at bottom right, rgba(212, 87, 104, 0.08), transparent 20%)",
       }}
     >
       <ReactFlow<AutoCanvasNode, AutoCanvasEdge>
@@ -476,7 +476,7 @@ function AutoFlowCanvasInner({
           nodeBorderRadius={18}
           nodeColor={(node) =>
             node.data.highlighted
-              ? alpha("#FFBB00", 0.55)
+              ? alpha("#D45768", 0.55)
               : alpha(theme.palette.text.secondary, 0.2)
           }
           maskColor={alpha(theme.palette.background.default, 0.72)}

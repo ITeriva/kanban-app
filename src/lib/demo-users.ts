@@ -1,70 +1,71 @@
 import { GlobalRole } from "@prisma/client";
+import { buildPlatformEmail } from "@/lib/branding";
 
 export const SEED_DEFAULT_PASSWORD =
-  process.env.SEED_DEFAULT_PASSWORD ?? "tcc2026";
+  process.env.SEED_DEFAULT_PASSWORD ?? "kanban2026";
 
 export const demoUsers = [
   {
     name: "Leonardo Bouzan",
-    email: "leonardo@tcc.local",
+    email: buildPlatformEmail("leonardo"),
     role: GlobalRole.ADMIN,
-    title: "Coordenador do workspace",
+    title: "Coordenador de operações",
     avatarColor: "#2563eb",
   },
   {
     name: "Marina Costa",
-    email: "marina@tcc.local",
+    email: buildPlatformEmail("marina"),
     role: GlobalRole.ADMIN,
-    title: "Admin de produto e pesquisa",
+    title: "Líder de produto interno",
     avatarColor: "#7c3aed",
   },
   {
     name: "Ana Luiza Rocha",
-    email: "ana.rocha@tcc.local",
+    email: buildPlatformEmail("ana.rocha"),
     role: GlobalRole.MEMBER,
-    title: "Product designer",
+    title: "UX e design de fluxos",
     avatarColor: "#db2777",
   },
   {
     name: "Bruno Nascimento",
-    email: "bruno@tcc.local",
+    email: buildPlatformEmail("bruno"),
     role: GlobalRole.MEMBER,
     title: "Frontend",
     avatarColor: "#0f766e",
   },
   {
     name: "Caio Mendes",
-    email: "caio@tcc.local",
+    email: buildPlatformEmail("caio"),
     role: GlobalRole.MEMBER,
-    title: "Backend",
+    title: "Backend e automações",
     avatarColor: "#ea580c",
   },
   {
     name: "Fernanda Lima",
-    email: "fernanda@tcc.local",
+    email: buildPlatformEmail("fernanda"),
     role: GlobalRole.MEMBER,
-    title: "QA e operação",
+    title: "Qualidade e operação",
     avatarColor: "#0284c7",
   },
   {
     name: "Gabriel Alves",
-    email: "gabriel@tcc.local",
+    email: buildPlatformEmail("gabriel"),
     role: GlobalRole.MEMBER,
-    title: "Dados e dashboard",
+    title: "Dados e indicadores",
     avatarColor: "#65a30d",
   },
   {
     name: "Rafaela Torres",
-    email: "rafaela@tcc.local",
+    email: buildPlatformEmail("rafaela"),
     role: GlobalRole.COLLABORATOR,
-    title: "Colaboradora de calendário",
+    title: "Colaboração em processos",
     avatarColor: "#f59e0b",
   },
   {
-    name: "Prof. Helena Martins",
-    email: "helena@tcc.local",
+    name: "Helena Martins",
+    email: buildPlatformEmail("helena"),
     role: GlobalRole.ADVISOR,
-    title: "Orientadora",
+    title: "Gestão e acompanhamento",
     avatarColor: "#64748b",
   },
 ] as const;

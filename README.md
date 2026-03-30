@@ -1,6 +1,6 @@
-# Workspace do TCC
+# Ops Board
 
-Aplicação full-stack em Next.js para organizar projetos, tarefas, sprints, calendário e acompanhamento do desenvolvimento do TCC em um único workspace.
+Aplicação full-stack em Next.js para organizar projetos, tarefas, sprints, calendário, fluxos e acompanhamento operacional da squad de TI em um único workspace interno.
 
 ## Desenvolvimento local
 

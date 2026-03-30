@@ -6,6 +6,7 @@ import { EntityCard } from "@/components/ui/entity-card";
 import { PageHeader } from "@/components/ui/page-header";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { TagChip } from "@/components/ui/tag-chip";
+import { appBrand } from "@/lib/branding";
 import { requireUser } from "@/server/auth/session";
 import { canCreateTeam } from "@/server/permissions";
 import { listTeamFormOptions } from "@/server/services/reference-data";
@@ -27,7 +28,7 @@ export default async function TeamsPage() {
       <PageHeader
         eyebrow="Equipes"
         title="Equipes e responsáveis"
-        description="Veja quem participa de cada frente do TCC e como o grupo está organizado."
+        description="Veja como a squad de TI está distribuída entre frentes, responsáveis e áreas de atuação."
         chips={[`${myTeams.length} equipes com você`, `${teams.length} equipes visíveis`]}
         actions={
           allowCreateTeam && teamFormOptions ? (
@@ -101,7 +102,7 @@ export default async function TeamsPage() {
                       <Box>
                         <Typography fontWeight={700}>{member.user.name}</Typography>
                         <Typography color="text.secondary" variant="body2">
-                          {member.user.title ?? "Grupo do TCC"}
+                          {member.user.title ?? appBrand.defaultUserTitle}
                         </Typography>
                       </Box>
                       <StatusBadge status={member.user.role} />

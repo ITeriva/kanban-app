@@ -2,11 +2,7 @@
 
 ## Visão do projeto
 
-Este projeto é uma plataforma única de gestão do TCC, usada por 9 pessoas:
-
-- 7 membros fixos do grupo
-- 1 colaborador temporário
-- 1 orientadora
+Este projeto é uma plataforma interna de gestão da squad de TI.
 
 O objetivo é oferecer um workspace simples, funcional e bonito para organizar:
 
@@ -16,14 +12,15 @@ O objetivo é oferecer um workspace simples, funcional e bonito para organizar:
 - sprints
 - calendário
 - dashboard
-- documentação operacional do desenvolvimento
+- fluxos
+- documentação operacional do time
 
 Este projeto **não é multi-tenant**.
 Existe apenas um workspace.
 
 ## Objetivos principais
 
-- Entregar uma aplicação funcional e demonstrável para o TCC
+- Entregar uma aplicação funcional e utilizável para operação interna
 - Priorizar simplicidade e usabilidade
 - Manter uma UI inspirada no Notion, mas adaptada para um produto web real
 - Evitar arquitetura enterprise desnecessária
@@ -66,9 +63,9 @@ Não usar stored procedures como camada principal de negócio.
 ### Significado
 
 - ADMIN: administra o workspace e vê tudo
-- MEMBER: membro fixo do grupo
-- COLLABORATOR: usuário temporário, vê apenas o que participa
-- ADVISOR: orientadora, visão mais gerencial/leitura
+- MEMBER: membro operacional fixo da squad
+- COLLABORATOR: usuário temporário ou de apoio, vê apenas o que participa
+- ADVISOR: perfil de gestão/acompanhamento, com visão mais gerencial e de leitura
 
 ## Roles por projeto
 
@@ -168,12 +165,12 @@ Não usar stored procedures como camada principal de negócio.
 
 ## Seed esperado
 
-Criar seed inicial com os 9 usuários do TCC:
+Criar seed inicial com usuários suficientes para cobrir cenários reais da squad:
 
 - admins
 - membros
 - colaborador
-- orientadora
+- gestão
 
 Também criar:
 
@@ -184,8 +181,9 @@ Também criar:
 - tags
 - checklist
 - boards
+- fluxos manuais
 
-Os dados precisam ser úteis para demonstração real da aplicação.
+Os dados precisam ser úteis para validação real da aplicação em ambiente local.
 
 ## Comandos e workflow
 

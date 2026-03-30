@@ -727,10 +727,10 @@ function ManualFlowCanvasInner({ flowchart, openHref, sidebar }: ManualFlowCanva
                   height: 22,
                   color:
                     nextAccent === "gold"
-                      ? "#FFBB00"
+                      ? "#D45768"
                       : nextAccent === "neutral"
                         ? "#8C839F"
-                        : "#5D05FF",
+                        : "#416CE4",
                 },
                 data: {
                   ...edge.data,
@@ -1029,11 +1029,11 @@ function ManualFlowCanvasInner({ flowchart, openHref, sidebar }: ManualFlowCanva
             : "Edite o texto, o simbolo e a cor do artefato sem sair do canvas."
           : selectedEdge
             ? "Refine o rotulo e o estilo da ligacao para deixar o fluxo mais legivel."
-            : activeTool === "connect"
+              : activeTool === "connect"
               ? pendingConnectionSourceId
                 ? "Modo conectar ativo: selecione o artefato de destino para concluir a ligacao."
                 : "Modo conectar ativo: selecione o artefato de origem e depois o de destino."
-              : "Paleta por artefatos classicos, ligacoes com rotulo e raias para documentacao real do TCC."
+              : "Paleta por artefatos classicos, ligacoes com rotulo e raias para documentacao operacional real."
       }
     >
       {selectedNodes.length > 1 ? (
@@ -1349,7 +1349,7 @@ function ManualFlowCanvasInner({ flowchart, openHref, sidebar }: ManualFlowCanva
           >
             {flowEdgeAccents.map((accent) => (
               <MenuItem key={accent} value={accent}>
-                {accent === "gold" ? "Gold" : accent === "violet" ? "Violet" : "Neutra"}
+                {accent === "gold" ? "Vermelha" : accent === "violet" ? "Azul" : "Neutra"}
               </MenuItem>
             ))}
           </TextField>
@@ -1531,7 +1531,7 @@ function ManualFlowCanvasInner({ flowchart, openHref, sidebar }: ManualFlowCanva
       sx={{
         height: 760,
         background:
-          "radial-gradient(circle at top, rgba(93, 5, 255, 0.06), transparent 24%), radial-gradient(circle at bottom right, rgba(255, 187, 0, 0.08), transparent 20%)",
+          "radial-gradient(circle at top, rgba(65, 108, 228, 0.06), transparent 24%), radial-gradient(circle at bottom right, rgba(212, 87, 104, 0.08), transparent 20%)",
       }}
     >
       <ManualCanvasContext.Provider
@@ -1570,7 +1570,7 @@ function ManualFlowCanvasInner({ flowchart, openHref, sidebar }: ManualFlowCanva
           }}
           connectionLineType={ConnectionLineType.SmoothStep}
           connectionLineStyle={{
-            stroke: "#5D05FF",
+            stroke: "#416CE4",
             strokeWidth: 2.4,
           }}
           panOnScroll
@@ -1596,9 +1596,9 @@ function ManualFlowCanvasInner({ flowchart, openHref, sidebar }: ManualFlowCanva
             nodeBorderRadius={18}
             nodeColor={(node) =>
               node.data.color === "gold"
-                ? alpha("#FFBB00", 0.55)
+                ? alpha("#D45768", 0.55)
                 : node.data.color === "violet"
-                  ? alpha("#5D05FF", 0.55)
+                  ? alpha("#416CE4", 0.55)
                   : node.data.color === "mint"
                     ? alpha("#18B56A", 0.55)
                     : node.data.color === "rose"
@@ -1727,13 +1727,13 @@ function ManualNodeRenderer({ id, data, selected }: NodeProps<ManualCanvasNode>)
           isVisible={context.canManage && selected}
           minWidth={220}
           minHeight={180}
-          color="#5D05FF"
-          lineStyle={{ borderColor: "rgba(93, 5, 255, 0.3)" }}
+          color="#416CE4"
+          lineStyle={{ borderColor: "rgba(65, 108, 228, 0.3)" }}
           handleStyle={{
             width: 12,
             height: 12,
             borderRadius: 999,
-            background: "#FFBB00",
+            background: "#D45768",
             borderColor: "#0F0C17",
           }}
           onResize={(_event, params) =>
@@ -1816,8 +1816,8 @@ function NodeHandle({
         transition: "opacity 160ms ease, transform 160ms ease, box-shadow 160ms ease",
         transform: visible ? "scale(1)" : "scale(0.84)",
         border: "2px solid rgba(15, 12, 23, 0.92)",
-        background: "#FFBB00",
-        boxShadow: visible ? "0 0 0 4px rgba(93, 5, 255, 0.12)" : "none",
+        background: "#D45768",
+        boxShadow: visible ? "0 0 0 4px rgba(65, 108, 228, 0.12)" : "none",
       }}
     />
   );
@@ -1980,7 +1980,7 @@ function renderArtifactIcon(type: FlowNodeType, borderColor: string, fill: strin
   if (type === "NOTE") {
     return (
       <>
-        <ShapeBox borderColor={borderColor} fill={alpha("#FFBB00", 0.2)} borderRadius={2.5} />
+        <ShapeBox borderColor={borderColor} fill={alpha("#D45768", 0.2)} borderRadius={2.5} />
         <Box
           sx={{
             position: "absolute",
@@ -2077,8 +2077,8 @@ function ColorSwatch({
 }) {
   const theme = useTheme();
   const map: Record<FlowNodeColorKey, string> = {
-    gold: "#FFBB00",
-    violet: "#5D05FF",
+    gold: "#D45768",
+    violet: "#416CE4",
     slate: alpha(theme.palette.text.secondary, 0.5),
     mint: "#18B56A",
     rose: "#F45EA4",
@@ -2186,7 +2186,7 @@ function withRenderedEdgeData(edges: ManualCanvasEdge[]) {
     const offsetIndex = total > 1 ? index - (total - 1) / 2 : 0;
     const accent = edge.data?.accent ?? "violet";
     const color =
-      accent === "gold" ? "#FFBB00" : accent === "neutral" ? "#8C839F" : "#5D05FF";
+      accent === "gold" ? "#D45768" : accent === "neutral" ? "#8C839F" : "#416CE4";
     const connectionType = edge.data?.connectionType ?? "ARROW";
 
     groupIndexes.set(key, index + 1);
@@ -2512,8 +2512,8 @@ function getAlignmentGuideStyle({
       width: 2,
       borderRadius: 999,
       background:
-        "linear-gradient(180deg, rgba(255, 187, 0, 0.92), rgba(93, 5, 255, 0.88))",
-      boxShadow: "0 0 0 4px rgba(255, 187, 0, 0.12), 0 0 20px rgba(93, 5, 255, 0.2)",
+        "linear-gradient(180deg, rgba(212, 87, 104, 0.92), rgba(65, 108, 228, 0.88))",
+      boxShadow: "0 0 0 4px rgba(212, 87, 104, 0.12), 0 0 20px rgba(65, 108, 228, 0.2)",
       opacity: 0.9,
     } as const;
   }
@@ -2528,8 +2528,8 @@ function getAlignmentGuideStyle({
     height: 2,
     borderRadius: 999,
     background:
-      "linear-gradient(90deg, rgba(255, 187, 0, 0.92), rgba(93, 5, 255, 0.88))",
-    boxShadow: "0 0 0 4px rgba(255, 187, 0, 0.12), 0 0 20px rgba(93, 5, 255, 0.2)",
+      "linear-gradient(90deg, rgba(212, 87, 104, 0.92), rgba(65, 108, 228, 0.88))",
+    boxShadow: "0 0 0 4px rgba(212, 87, 104, 0.12), 0 0 20px rgba(65, 108, 228, 0.2)",
     opacity: 0.9,
   } as const;
 }

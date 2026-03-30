@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import { roleLabels } from "@/lib/domain";
+import { appBrand } from "@/lib/branding";
 import { ForcePasswordChangeDialog } from "@/components/profile/force-password-change-dialog";
 import { Sidebar } from "@/components/layout/sidebar";
 import { SidebarNav } from "@/components/layout/sidebar-nav";
@@ -23,7 +24,7 @@ type AppShellFrameProps = {
   children: React.ReactNode;
 };
 
-const SIDEBAR_STORAGE_KEY = "rolezito-workspace-sidebar-collapsed";
+const SIDEBAR_STORAGE_KEY = `${appBrand.storageNamespace}-sidebar-collapsed`;
 
 export function AppShellFrame({
   user,
@@ -80,7 +81,7 @@ export function AppShellFrame({
         >
           <Stack spacing={2}>
             <Box>
-              <Typography variant="h4">Rolezito TCC</Typography>
+              <Typography variant="h4">{appBrand.name}</Typography>
               <Typography color="text.secondary" variant="body2">
                 {user.name} • {roleLabels[user.role]}
               </Typography>

@@ -19,6 +19,7 @@ import { ProjectPropertiesPanel } from "@/components/ui/project-properties-panel
 import { SegmentedTabs } from "@/components/ui/segmented-tabs";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { TaskDrawer } from "@/components/ui/task-drawer";
+import { appBrand } from "@/lib/branding";
 import { formatFullDate } from "@/lib/formatters";
 import { requireUser } from "@/server/auth/session";
 import {
@@ -193,7 +194,7 @@ export default async function ProjectDetailPage({
           title={project.name}
           description={project.description ?? project.summary}
           chips={[
-            project.team?.name ?? "Grupo do TCC",
+            project.team?.name ?? appBrand.workspaceLabel,
             `${project.tasks.length} tarefas`,
             `${project.sprints.length} sprints`,
           ]}
@@ -232,7 +233,7 @@ export default async function ProjectDetailPage({
               <EntityCard
                 eyebrow="Resumo"
                 title="Contexto do projeto"
-                description="Objetivo, escopo e contexto desta frente do TCC."
+                description="Objetivo, escopo e contexto desta frente interna."
               >
                 <Typography color="text.secondary">
                   {project.description ??
@@ -315,7 +316,7 @@ export default async function ProjectDetailPage({
               <EntityCard
                 eyebrow="Equipe"
                 title="Pessoas conectadas"
-                description="Pessoas envolvidas e papéis desta frente do TCC."
+                description="Pessoas envolvidas e papéis desta frente da squad."
               >
                 <AvatarStack
                   max={6}
@@ -341,7 +342,7 @@ export default async function ProjectDetailPage({
                         <Box>
                           <Typography fontWeight={700}>{member.user.name}</Typography>
                           <Typography color="text.secondary" variant="body2">
-                            {member.user.title ?? "Grupo do TCC"}
+                            {member.user.title ?? appBrand.defaultUserTitle}
                           </Typography>
                         </Box>
                         <StatusBadge status={member.user.role} />

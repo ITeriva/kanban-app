@@ -17,8 +17,8 @@ export default async function SprintsPage() {
     <Stack spacing={3}>
       <PageHeader
         eyebrow="Sprints"
-        title="Sprints do TCC"
-        description="Acompanhe os ciclos de trabalho, objetivos e prazos de cada sprint."
+        title="Sprints da operação"
+        description="Acompanhe os ciclos de trabalho, objetivos e prazos de cada sprint da squad."
       />
 
       {currentSprint ? (

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AvatarStack } from "@/components/ui/avatar-stack";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { TagChip } from "@/components/ui/tag-chip";
+import { appBrand } from "@/lib/branding";
 import { formatDate } from "@/lib/formatters";
 
 type ProjectCardProps = {
@@ -46,7 +47,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         transition:
           "transform 180ms ease, border-color 180ms ease, background-color 180ms ease",
         "&:hover": {
-          borderColor: "rgba(93, 5, 255, 0.22)",
+          borderColor: "rgba(65, 108, 228, 0.22)",
           bgcolor: "action.hover",
           transform: "translateY(-1px)",
         },
@@ -59,7 +60,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             noWrap
             sx={{ color: "text.secondary", letterSpacing: "0.08em" }}
           >
-            {project.team?.name ?? "Grupo do TCC"}
+            {project.team?.name ?? appBrand.workspaceLabel}
           </Typography>
           <StatusBadge status={project.status} />
         </Stack>

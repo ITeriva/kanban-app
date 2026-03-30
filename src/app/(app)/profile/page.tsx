@@ -8,6 +8,7 @@ import { KpiCard } from "@/components/ui/kpi-card";
 import { PageHeader } from "@/components/ui/page-header";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { TaskCard } from "@/components/ui/task-card";
+import { appBrand } from "@/lib/branding";
 import { roleLabels } from "@/lib/domain";
 import { formatDate, formatRelativeDate } from "@/lib/formatters";
 import { requireUser } from "@/server/auth/session";
@@ -25,7 +26,7 @@ export default async function ProfilePage() {
         description="Acompanhe sua carga de trabalho, seus prazos e o ritmo das suas entregas em um só lugar."
         chips={[
           roleLabels[user.role],
-          user.title ?? "Participante do grupo",
+          user.title ?? appBrand.defaultUserTitle,
           `${data.stats.assignedTasks} tarefas atribuídas`,
         ]}
         actions={
@@ -104,7 +105,7 @@ export default async function ProfilePage() {
           >
             <ProfileDetail label="E-mail" value={user.email} />
             <ProfileDetail label="Papel" value={roleLabels[user.role]} />
-            <ProfileDetail label="Função" value={user.title ?? "Participante do grupo"} />
+            <ProfileDetail label="Função" value={user.title ?? appBrand.defaultUserTitle} />
           </Box>
           <ProfilePasswordForm />
         </EntityCard>
@@ -297,7 +298,7 @@ function DeliveryRow({
         transition:
           "transform 180ms ease, border-color 180ms ease, background-color 180ms ease",
         "&:hover": {
-          borderColor: "rgba(93, 5, 255, 0.22)",
+          borderColor: "rgba(65, 108, 228, 0.22)",
           bgcolor: "action.hover",
           transform: "translateY(-1px)",
         },

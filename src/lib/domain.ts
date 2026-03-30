@@ -16,7 +16,7 @@ export const roleLabels: Record<GlobalRole, string> = {
   ADMIN: "Admin",
   MEMBER: "Membro",
   COLLABORATOR: "Colaborador",
-  ADVISOR: "Orientadora",
+  ADVISOR: "Gestão",
 };
 
 export const projectStatusLabels: Record<ProjectStatus, string> = {
@@ -71,7 +71,7 @@ export const taskTypeLabels: Record<TaskType, string> = {
 };
 
 export const projectVisibilityLabels: Record<ProjectVisibility, string> = {
-  WORKSPACE: "Workspace",
+  WORKSPACE: "Squad inteira",
   PROJECT_MEMBERS: "Membros do projeto",
   LEADERS_ONLY: "Lideranças",
 };
@@ -83,7 +83,7 @@ export const taskVisibilityLabels: Record<TaskVisibility, string> = {
 };
 
 export const flowchartScopeLabels: Record<FlowchartScopeType, string> = {
-  WORKSPACE: "Diagrama solto",
+  WORKSPACE: "Diagrama livre",
   PROJECT: "Diagrama do projeto",
   TASK: "Diagrama da tarefa",
 };

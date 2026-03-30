@@ -108,7 +108,7 @@ export function FlowToolbar({
                           ? alpha(theme.palette.secondary.main, 0.28)
                           : "divider",
                         boxShadow: item.active
-                          ? "0 14px 26px rgba(93, 5, 255, 0.16)"
+                          ? "0 14px 26px rgba(65, 108, 228, 0.16)"
                           : "none",
                         "&:hover": {
                           bgcolor: item.active

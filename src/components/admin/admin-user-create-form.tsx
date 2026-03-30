@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { PLATFORM_RESET_PASSWORD } from "@/lib/auth";
+import { appBrand } from "@/lib/branding";
 import { roleLabels } from "@/lib/domain";
 import { createUserAction } from "@/server/actions/users";
 
@@ -112,7 +113,7 @@ export function AdminUserCreateForm() {
         alignItems={{ xs: "flex-start", md: "center" }}
       >
         <Typography color="text.secondary" variant="body2" sx={{ maxWidth: 620 }}>
-          O login será criado no formato <strong>nome.sobrenome@rolezito.com</strong>.
+          O login será criado no formato <strong>nome.sobrenome@{appBrand.accessDomain}</strong>.
           A senha inicial é <strong>{PLATFORM_RESET_PASSWORD}</strong> e a plataforma
           exigirá a troca dela no primeiro acesso.
         </Typography>

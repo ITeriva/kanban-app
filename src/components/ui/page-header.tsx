@@ -36,7 +36,7 @@ export function PageHeader({
           inset: 0,
           pointerEvents: "none",
           background:
-            "radial-gradient(circle at top left, rgba(93, 5, 255, 0.10), transparent 28%), radial-gradient(circle at top right, rgba(255, 187, 0, 0.08), transparent 24%)",
+            "radial-gradient(circle at top left, rgba(65, 108, 228, 0.10), transparent 28%), radial-gradient(circle at top right, rgba(212, 87, 104, 0.08), transparent 24%)",
         }}
       />
 

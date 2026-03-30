@@ -45,8 +45,8 @@ export default async function CalendarPage() {
     <Stack spacing={3}>
       <PageHeader
         eyebrow="Calendário"
-        title="Calendário do TCC"
-        description="Visualize prazos de tarefas e marcos das sprints em uma agenda mensal."
+        title="Calendário da operação"
+        description="Visualize prazos de tarefas e marcos das sprints em uma agenda mensal da squad."
       />
 
       <Box

@@ -17,6 +17,7 @@ import {
   Typography,
 } from "@mui/material";
 import Link from "next/link";
+import { appBrand } from "@/lib/branding";
 import { roleLabels } from "@/lib/domain";
 import { useAppColorMode } from "@/components/providers/app-providers";
 
@@ -54,10 +55,10 @@ export function TopBar({ user }: TopBarProps) {
             variant="overline"
             sx={{ color: "secondary.main", letterSpacing: "0.16em" }}
           >
-            WORKSPACE DO TCC
+            {appBrand.contextLabel}
           </Typography>
           <Typography variant="h4" sx={{ mt: 0.25 }}>
-            Acompanhamento do TCC
+            Projetos, backlog e fluxos operacionais
           </Typography>
         </Box>
 

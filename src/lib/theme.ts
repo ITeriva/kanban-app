@@ -1,8 +1,11 @@
 import { alpha, createTheme, PaletteMode } from "@mui/material/styles";
 
 export const brandColors = {
-  gold: "#FFBB00",
-  violet: "#5D05FF",
+  action: "#D45768",
+  navigation: "#416CE4",
+  slate: "#8E9AB0",
+  gold: "#D45768",
+  violet: "#416CE4",
 };
 
 export function createAppTheme(mode: PaletteMode) {
@@ -13,39 +16,39 @@ export function createAppTheme(mode: PaletteMode) {
     palette: {
       mode,
       primary: {
-        main: brandColors.gold,
-        light: "#FFD75C",
-        dark: "#D99A00",
-        contrastText: "#1C1500",
+        main: brandColors.action,
+        light: "#EE7B8A",
+        dark: "#AA3A4D",
+        contrastText: "#FFF9FB",
       },
       secondary: {
-        main: brandColors.violet,
-        light: "#8A54FF",
-        dark: "#4200C2",
+        main: brandColors.navigation,
+        light: "#7092FF",
+        dark: "#274DB8",
         contrastText: "#FFFFFF",
       },
       background: {
-        default: isDark ? "#09070F" : "#F6F3EF",
-        paper: isDark ? "#12101A" : "#FFFCF8",
+        default: isDark ? "#09101C" : "#F3F7FC",
+        paper: isDark ? "#0F1929" : "#FCFDFF",
       },
       text: {
-        primary: isDark ? "#F7F2EB" : "#18161F",
-        secondary: isDark ? "#B8B0C8" : "#6A6376",
+        primary: isDark ? "#F4F7FD" : "#162032",
+        secondary: isDark ? "#99A7BE" : "#607086",
       },
       divider: isDark
-        ? "rgba(247, 242, 235, 0.08)"
-        : "rgba(24, 22, 31, 0.08)",
+        ? "rgba(244, 247, 253, 0.08)"
+        : "rgba(22, 32, 50, 0.08)",
       success: {
         main: "#18B56A",
       },
       warning: {
-        main: "#F59E0B",
+        main: "#F29D52",
       },
       error: {
-        main: "#E25C50",
+        main: "#D45768",
       },
       info: {
-        main: "#3498FF",
+        main: brandColors.navigation,
       },
     },
     shape: {
@@ -99,8 +102,8 @@ export function createAppTheme(mode: PaletteMode) {
         styleOverrides: {
           body: {
             background: isDark
-              ? "radial-gradient(circle at top, rgba(93, 5, 255, 0.18), transparent 30%), radial-gradient(circle at bottom right, rgba(255, 187, 0, 0.08), transparent 25%), #09070F"
-              : "radial-gradient(circle at top, rgba(93, 5, 255, 0.07), transparent 26%), radial-gradient(circle at bottom right, rgba(255, 187, 0, 0.10), transparent 22%), #F6F3EF",
+              ? "radial-gradient(circle at top, rgba(65, 108, 228, 0.18), transparent 30%), radial-gradient(circle at bottom right, rgba(212, 87, 104, 0.10), transparent 25%), #09101C"
+              : "radial-gradient(circle at top, rgba(65, 108, 228, 0.08), transparent 26%), radial-gradient(circle at bottom right, rgba(212, 87, 104, 0.10), transparent 22%), #F3F7FC",
           },
         },
       },
@@ -110,11 +113,11 @@ export function createAppTheme(mode: PaletteMode) {
             backgroundImage: "none",
             borderRadius: 24,
             border: `1px solid ${
-              isDark ? "rgba(247, 242, 235, 0.08)" : "rgba(24, 22, 31, 0.07)"
+              isDark ? "rgba(244, 247, 253, 0.08)" : "rgba(22, 32, 50, 0.07)"
             }`,
             boxShadow: isDark
-              ? "0 24px 60px rgba(0, 0, 0, 0.28)"
-              : "0 24px 60px rgba(24, 22, 31, 0.08)",
+              ? "0 24px 60px rgba(0, 0, 0, 0.32)"
+              : "0 24px 60px rgba(22, 32, 50, 0.08)",
           },
         },
       },
@@ -122,8 +125,8 @@ export function createAppTheme(mode: PaletteMode) {
         styleOverrides: {
           root: {
             backgroundColor: isDark
-              ? alpha("#151220", 0.86)
-              : alpha("#FFFCF8", 0.9),
+              ? alpha("#132036", 0.88)
+              : alpha("#FCFDFF", 0.92),
             backdropFilter: "blur(22px)",
           },
         },
@@ -140,13 +143,13 @@ export function createAppTheme(mode: PaletteMode) {
           },
           containedPrimary: {
             boxShadow: isDark
-              ? "0 14px 30px rgba(255, 187, 0, 0.22)"
-              : "0 14px 30px rgba(255, 187, 0, 0.18)",
+              ? "0 14px 30px rgba(212, 87, 104, 0.26)"
+              : "0 14px 30px rgba(212, 87, 104, 0.18)",
           },
           outlined: {
             borderColor: isDark
-              ? "rgba(247,242,235,0.12)"
-              : "rgba(24,22,31,0.10)",
+              ? "rgba(244,247,253,0.12)"
+              : "rgba(22,32,50,0.10)",
           },
         },
       },
@@ -161,7 +164,7 @@ export function createAppTheme(mode: PaletteMode) {
       MuiTabs: {
         styleOverrides: {
           indicator: {
-            backgroundColor: brandColors.violet,
+            backgroundColor: brandColors.navigation,
             height: 3,
             borderRadius: 999,
           },
@@ -173,9 +176,9 @@ export function createAppTheme(mode: PaletteMode) {
             minHeight: 42,
             paddingInline: 10,
             fontWeight: 700,
-            color: isDark ? "#B8B0C8" : "#6A6376",
+            color: isDark ? "#99A7BE" : "#607086",
             "&.Mui-selected": {
-              color: brandColors.violet,
+              color: brandColors.navigation,
             },
           },
         },
@@ -185,7 +188,7 @@ export function createAppTheme(mode: PaletteMode) {
           root: {
             borderRadius: 16,
             border: `1px solid ${
-              isDark ? "rgba(247,242,235,0.08)" : "rgba(24,22,31,0.08)"
+              isDark ? "rgba(244,247,253,0.08)" : "rgba(22,32,50,0.08)"
             }`,
           },
         },
@@ -195,8 +198,8 @@ export function createAppTheme(mode: PaletteMode) {
           root: {
             borderRadius: 18,
             backgroundColor: isDark
-              ? alpha("#FFFFFF", 0.02)
-              : alpha("#FFFFFF", 0.78),
+              ? alpha("#FFFFFF", 0.03)
+              : alpha("#FFFFFF", 0.86),
           },
         },
       },
@@ -206,7 +209,7 @@ export function createAppTheme(mode: PaletteMode) {
             width: "min(520px, 100vw)",
             borderTopLeftRadius: 28,
             borderBottomLeftRadius: 28,
-            backgroundColor: isDark ? "#100D18" : "#FFFDF9",
+            backgroundColor: isDark ? "#0E1727" : "#FCFDFF",
           },
         },
       },

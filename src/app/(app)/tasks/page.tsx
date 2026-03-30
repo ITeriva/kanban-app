@@ -116,8 +116,8 @@ export default async function TasksPage({ searchParams }: TasksPageProps) {
       <Stack spacing={3}>
       <PageHeader
         eyebrow="Tarefas"
-        title="Tarefas do TCC"
-        description="Organize o trabalho do grupo por status, projeto, sprint e responsabilidade, com detalhe rápido no painel lateral e página completa quando precisar de foco."
+        title="Tarefas da squad"
+        description="Organize a operação por status, projeto, sprint e responsabilidade, com detalhe rápido no painel lateral e página completa quando precisar de foco."
         chips={["Quadro e listas", "Checklist central", "Acompanhamento por sprint"]}
           actions={
             canCreateAnyTask ? (
@@ -199,7 +199,7 @@ function renderTasksView(
         <ViewLead
           eyebrow="Quadro"
           title="Quadro geral das tarefas"
-          meta="Acompanhe o trabalho do grupo distribuído por status."
+          meta="Acompanhe o trabalho da squad distribuído por status."
         />
         <TaskStatusBoardDnd
           tasks={tasks.map((task) => toTaskDndBoardItem(task, `/tasks?view=board&taskId=${task.id}`))}
@@ -217,7 +217,7 @@ function renderTasksView(
         <ViewLead
           eyebrow="Projetos"
           title="Tarefas por projeto"
-          meta="Veja o que cada frente do TCC está executando."
+          meta="Veja o que cada frente interna está executando."
         />
         <DatabaseSurface>
           <DatabaseListHeader

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { AppProviders } from "@/components/providers/app-providers";
+import { appBrand } from "@/lib/branding";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Kanban - Rolêzito",
-  description: "Workspace para acompanhar projetos, tarefas, sprints e prazos do TCC",
+  title: appBrand.name,
+  description: appBrand.description,
 };
 
 type RootLayoutProps = {

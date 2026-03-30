@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { PaletteMode } from "@mui/material/styles";
+import { appBrand } from "@/lib/branding";
 import { createAppTheme } from "@/lib/theme";
 
 type AppProvidersProps = {
@@ -45,7 +46,9 @@ export function AppProviders({ children }: AppProvidersProps) {
   }
 
   useEffect(() => {
-    const storedMode = window.localStorage.getItem("rolezito-workspace-mode");
+    const storedMode = window.localStorage.getItem(
+      `${appBrand.storageNamespace}-mode`,
+    );
 
     if (storedMode === "light" || storedMode === "dark") {
       setMode(storedMode);
@@ -59,7 +62,7 @@ export function AppProviders({ children }: AppProvidersProps) {
       return;
     }
 
-    window.localStorage.setItem("rolezito-workspace-mode", mode);
+    window.localStorage.setItem(`${appBrand.storageNamespace}-mode`, mode);
   }, [hydrated, mode]);
 
   const theme = createAppTheme(mode);

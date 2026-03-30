@@ -81,7 +81,7 @@ export function FlowEdgeRenderer({
           strokeDasharray: edgeData.lineStyle === "dashed" ? "8 6" : undefined,
           filter:
             selected || edgeData.highlighted
-              ? "drop-shadow(0 0 10px rgba(93, 5, 255, 0.18))"
+              ? "drop-shadow(0 0 10px rgba(65, 108, 228, 0.18))"
               : "none",
         }}
       />
@@ -105,7 +105,7 @@ export function FlowEdgeRenderer({
                   border: "2px solid",
                   borderColor: alpha(accent, 0.88),
                   bgcolor: alpha(theme.palette.background.paper, 0.96),
-                  boxShadow: "0 0 0 4px rgba(255, 187, 0, 0.14)",
+                  boxShadow: "0 0 0 4px rgba(212, 87, 104, 0.14)",
                 }}
               />
             </Box>
@@ -125,7 +125,7 @@ export function FlowEdgeRenderer({
                   border: "2px solid",
                   borderColor: alpha(accent, 0.88),
                   bgcolor: alpha(theme.palette.background.paper, 0.96),
-                  boxShadow: "0 0 0 4px rgba(93, 5, 255, 0.12)",
+                  boxShadow: "0 0 0 4px rgba(65, 108, 228, 0.12)",
                 }}
               />
             </Box>
@@ -153,7 +153,7 @@ export function FlowEdgeRenderer({
                 bgcolor: alpha(theme.palette.background.paper, 0.94),
                 backdropFilter: "blur(12px)",
                 boxShadow: selected
-                  ? "0 16px 28px rgba(93, 5, 255, 0.18)"
+                  ? "0 16px 28px rgba(65, 108, 228, 0.18)"
                   : "0 8px 18px rgba(7, 6, 12, 0.1)",
               }}
             >

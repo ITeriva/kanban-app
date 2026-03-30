@@ -220,7 +220,7 @@ export function FlowchartsDirectoryPage({
 
       <FlowchartSection
         title="Diagramas por tarefa"
-        description="Fluxos manuais anexados a tarefas específicas, úteis para detalhar implementação, revisão e documentação do TCC."
+        description="Fluxos manuais anexados a tarefas específicas, úteis para detalhar implementação, revisão e documentação operacional."
         items={sections.tasks}
         onOpen={(flowchartId) => router.push(`/flowcharts/${flowchartId}`)}
         onDuplicate={handleDuplicate}
@@ -247,7 +247,7 @@ export function FlowchartsDirectoryPage({
               label="Nome"
               value={name}
               onChange={(event) => setName(event.target.value)}
-              placeholder="Ex.: Fluxo geral da banca"
+              placeholder="Ex.: Fluxo geral de atendimento"
             />
             <TextField
               label="Descrição"

@@ -17,10 +17,10 @@ export default async function DashboardPage() {
   const data = await getDashboardData(user);
 
   const roleCopy = {
-    ADMIN: "Acompanhe o andamento do grupo, a distribuição do trabalho e os pontos que precisam de atenção.",
-    MEMBER: "Veja o que está em andamento, suas responsabilidades e os próximos prazos do TCC.",
+    ADMIN: "Acompanhe a operação da squad, a distribuição do trabalho e os pontos que precisam de atenção.",
+    MEMBER: "Veja o que está em andamento, suas responsabilidades e os próximos prazos da operação.",
     COLLABORATOR: "Acesse as frentes em que você participa e acompanhe o que precisa ser entregue.",
-    ADVISOR: "Acompanhe a evolução do trabalho, os marcos ativos e os próximos prazos do grupo.",
+    ADVISOR: "Acompanhe a evolução do trabalho, os marcos ativos e os próximos prazos da squad.",
   }[user.role];
 
   return (
@@ -29,7 +29,7 @@ export default async function DashboardPage() {
         eyebrow="Painel"
         title={`Olá, ${user.name.split(" ")[0]}`}
         description={roleCopy}
-        chips={["Panorama do grupo", "Progresso do trabalho", "Leitura do dia"]}
+        chips={["Panorama operacional", "Progresso do trabalho", "Leitura do dia"]}
       />
 
       <Box
@@ -45,7 +45,7 @@ export default async function DashboardPage() {
         <EntityCard
           eyebrow="Hoje"
           title="Panorama do trabalho"
-          description="Um resumo rápido do que está em andamento no TCC neste momento."
+          description="Um resumo rápido do que está em andamento na squad neste momento."
           actions={
             <Button component={Link} href="/tasks?view=current" variant="contained" size="small">
               Ver sprint atual

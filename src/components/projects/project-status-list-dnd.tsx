@@ -194,7 +194,7 @@ function ProjectStatusListGroup({
         ) : (
           <Box sx={{ px: 2.25, py: 1.6 }}>
             <Typography color="text.secondary" variant="body2">
-              Nenhum projeto neste grupo.
+              Nenhum projeto neste status.
             </Typography>
           </Box>
         )}

@@ -131,7 +131,7 @@ export async function generateNextTaskCode() {
       return current > highest ? current : highest;
     }, 0) + 1;
 
-  return `TCC-${String(nextNumber).padStart(3, "0")}`;
+  return `OPS-${String(nextNumber).padStart(3, "0")}`;
 }
 
 export async function getBoardColumnId(projectId: string, status: TaskStatus) {

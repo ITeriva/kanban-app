@@ -51,9 +51,9 @@ export function FlowNodeCard(props: FlowNodeCardProps) {
           borderColor: props.selected ? "secondary.main" : "divider",
           bgcolor: alpha(theme.palette.background.paper, props.highlighted ? 0.98 : 0.94),
           boxShadow: props.selected
-            ? "0 26px 56px rgba(93, 5, 255, 0.18)"
+            ? "0 26px 56px rgba(65, 108, 228, 0.18)"
             : props.highlighted
-              ? "0 24px 48px rgba(255, 187, 0, 0.12)"
+              ? "0 24px 48px rgba(212, 87, 104, 0.12)"
               : "0 18px 40px rgba(7, 6, 12, 0.14)",
           p: 2,
           backdropFilter: "blur(18px)",
@@ -129,9 +129,9 @@ export function FlowNodeCard(props: FlowNodeCardProps) {
 
   const palette = getManualPalette(props.color, theme);
   const commonShadow = props.selected
-    ? "0 28px 64px rgba(93, 5, 255, 0.22)"
+    ? "0 28px 64px rgba(65, 108, 228, 0.22)"
     : props.pendingConnection
-      ? "0 24px 52px rgba(255, 187, 0, 0.22)"
+      ? "0 24px 52px rgba(212, 87, 104, 0.22)"
       : "0 18px 38px rgba(7, 6, 12, 0.12)";
   const baseBorderColor = props.selected
     ? "secondary.main"
@@ -160,7 +160,7 @@ export function FlowNodeCard(props: FlowNodeCardProps) {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(180deg, rgba(93, 5, 255, 0.08), transparent 22%), linear-gradient(90deg, rgba(255, 187, 0, 0.06), transparent 42%)",
+              "linear-gradient(180deg, rgba(65, 108, 228, 0.08), transparent 22%), linear-gradient(90deg, rgba(212, 87, 104, 0.06), transparent 42%)",
             pointerEvents: "none",
           },
         }}

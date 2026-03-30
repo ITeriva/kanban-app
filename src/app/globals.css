@@ -17,13 +17,13 @@ body {
 }
 
 html {
-  background-color: var(--mui-palette-background-default, #f6f3ef);
+  background-color: var(--mui-palette-background-default, #f3f7fc);
 }
 
 body {
   font-family: var(--font-manrope);
-  background-color: var(--mui-palette-background-default, #f6f3ef);
-  color: var(--mui-palette-text-primary, #18161f);
+  background-color: var(--mui-palette-background-default, #f3f7fc);
+  color: var(--mui-palette-text-primary, #162032);
   transition:
     background-color 180ms ease,
     color 180ms ease;

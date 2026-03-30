@@ -1,5 +1,6 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import Link from "next/link";
+import { appBrand } from "@/lib/branding";
 
 export default function NotFound() {
   return (
@@ -14,7 +15,7 @@ export default function NotFound() {
       <Stack spacing={2} sx={{ maxWidth: 420 }}>
         <Typography variant="h2">Página não encontrada</Typography>
         <Typography color="text.secondary">
-          O caminho solicitado não foi encontrado neste workspace do TCC.
+          O caminho solicitado não foi encontrado nesta área do {appBrand.name}.
         </Typography>
         <Button component={Link} href="/dashboard" variant="contained">
           Voltar ao painel

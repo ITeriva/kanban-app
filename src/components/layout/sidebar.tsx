@@ -20,6 +20,7 @@ import {
   alpha,
 } from "@mui/material";
 import Link from "next/link";
+import { appBrand } from "@/lib/branding";
 import { roleLabels } from "@/lib/domain";
 import { logoutAction } from "@/server/auth/actions";
 import { SidebarNav } from "@/components/layout/sidebar-nav";
@@ -76,17 +77,17 @@ export function Sidebar({ showAdmin, collapsed, onToggle, user }: SidebarProps) 
 
           {collapsed ? (
             <Stack spacing={2} alignItems="center">
-              <Tooltip title="Rolezito TCC" placement="right">
+              <Tooltip title={appBrand.name} placement="right">
                 <Box
                   sx={{
                     width: 48,
                     height: 48,
                     borderRadius: 3.25,
-                    bgcolor: "primary.main",
-                    color: "primary.contrastText",
+                    bgcolor: "secondary.main",
+                    color: "secondary.contrastText",
                     display: "grid",
                     placeItems: "center",
-                    boxShadow: "0 12px 24px rgba(255, 187, 0, 0.18)",
+                    boxShadow: "0 12px 24px rgba(65, 108, 228, 0.18)",
                   }}
                 >
                   <AutoAwesomeRounded fontSize="small" />
@@ -110,25 +111,24 @@ export function Sidebar({ showAdmin, collapsed, onToggle, user }: SidebarProps) 
                         width: 40,
                         height: 40,
                         borderRadius: 3,
-                        bgcolor: "primary.main",
-                        color: "primary.contrastText",
+                        bgcolor: "secondary.main",
+                        color: "secondary.contrastText",
                         display: "grid",
                         placeItems: "center",
-                        boxShadow: "0 12px 24px rgba(255, 187, 0, 0.18)",
+                        boxShadow: "0 12px 24px rgba(65, 108, 228, 0.18)",
                       }}
                     >
                       <AutoAwesomeRounded fontSize="small" />
                     </Box>
                     <Box>
-                      <Typography variant="h4">Rolezito TCC</Typography>
+                      <Typography variant="h4">{appBrand.name}</Typography>
                       <Typography color="text.secondary" variant="body2">
-                        Organizacao do grupo
+                        {appBrand.contextLabel}
                       </Typography>
                     </Box>
                   </Stack>
                   <Typography color="text.secondary" variant="body2">
-                    Projetos, tarefas, sprints e prazos do TCC reunidos em um so espaco de
-                    trabalho.
+                    {appBrand.summary}
                   </Typography>
                   <Button
                     component={Link}
@@ -204,7 +204,7 @@ export function Sidebar({ showAdmin, collapsed, onToggle, user }: SidebarProps) 
                 <Box>
                   <Typography fontWeight={700}>{user.name}</Typography>
                   <Typography color="text.secondary" variant="body2">
-                    {roleLabels[user.role]} • {user.title ?? "Grupo do TCC"}
+                    {roleLabels[user.role]} • {user.title ?? appBrand.defaultUserTitle}
                   </Typography>
                 </Box>
               </Stack>

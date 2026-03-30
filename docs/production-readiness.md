@@ -78,7 +78,7 @@ Não cria dados fake. O comportamento é:
 
 - remover qualquer banco de produção que tenha recebido seed de desenvolvimento
 - confirmar que o login em produção não exibe contas demo
-- confirmar que não existem e-mails `@tcc.local` no banco de produção
+- confirmar que não existem e-mails `@kanban.app` no banco de produção, exceto em ambientes controlados de desenvolvimento
 - confirmar que o primeiro admin é um usuário real
 - validar `npm run db:migrate:deploy` com a `DIRECT_URL` correta
 - validar o runtime com `DATABASE_URL` pooled do Supabase
@@ -88,4 +88,4 @@ Não cria dados fake. O comportamento é:
 
 - equipes e sprints ainda não têm CRUD completo pela UI
 - por isso, o bootstrap mínimo recomendado em produção é apenas o admin inicial
-- se o grupo quiser equipes pré-carregadas, isso deve ser feito com dados reais por seed adicional ou inserção manual controlada
+- se o time quiser equipes pré-carregadas, isso deve ser feito com dados reais por seed adicional ou inserção manual controlada

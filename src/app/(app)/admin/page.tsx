@@ -17,8 +17,8 @@ export default async function AdminPage() {
       <Stack spacing={3}>
         <PageHeader
           eyebrow="Admin"
-          title="Gestão do workspace"
-          description="Área reservada para acompanhar usuários, acessos e estrutura do grupo."
+          title="Gestão da plataforma"
+          description="Área reservada para acompanhar usuários, acessos e a estrutura interna da squad."
         />
         <Alert severity="warning">
           Seu perfil não tem acesso à gestão do workspace.
@@ -31,8 +31,8 @@ export default async function AdminPage() {
     <Stack spacing={3}>
       <PageHeader
         eyebrow="Admin"
-        title="Gestão do workspace"
-        description="Acompanhe usuários, acessos e vínculos do grupo em um único lugar."
+        title="Gestão da plataforma"
+        description="Acompanhe usuários, acessos e vínculos operacionais da squad em um único lugar."
       />
 
       <Box
@@ -49,13 +49,13 @@ export default async function AdminPage() {
         <KpiCard label="Usuários" value={data.users.length} helper="Pessoas com acesso ao workspace." tone="violet" />
         <KpiCard label="Sessões ativas" value={data.sessionCount} helper="Acessos em uso neste momento." tone="gold" />
         <KpiCard label="Projetos" value={data.projectCount} helper="Frentes registradas no trabalho." />
-        <KpiCard label="Tarefas" value={data.taskCount} helper="Atividades acompanhadas pelo grupo." />
+        <KpiCard label="Tarefas" value={data.taskCount} helper="Atividades acompanhadas pela squad." />
       </Box>
 
       <EntityCard
         eyebrow="Distribuição"
         title="Distribuição de papéis"
-        description="Veja como os perfis do grupo estão distribuídos no workspace."
+        description="Veja como os perfis estão distribuídos dentro da plataforma."
       >
         <RoleDistributionChart data={data.roleDistribution} />
       </EntityCard>
@@ -71,7 +71,7 @@ export default async function AdminPage() {
       <EntityCard
         eyebrow="Usuários"
         title="Usuários do workspace"
-        description="Gerencie papéis globais e recupere o acesso de quem precisar voltar ao workspace."
+        description="Gerencie papéis globais e recupere o acesso de quem precisar voltar ao ambiente."
       >
         <AdminUserManagementTable currentUserId={user.id} users={data.users} />
       </EntityCard>

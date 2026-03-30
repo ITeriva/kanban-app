@@ -13,6 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import { redirect } from "next/navigation";
+import { appBrand } from "@/lib/branding";
 import { demoUsers, SEED_DEFAULT_PASSWORD } from "@/lib/demo-users";
 import { roleLabels } from "@/lib/domain";
 import { loginAction } from "@/server/auth/actions";
@@ -31,33 +32,33 @@ const errorMessages: Record<string, string> = {
 
 const heroSignals = [
   {
-    label: "Projetos e frentes",
-    description: "Organize o escopo do Rolezito sem perder o contexto do grupo.",
+    label: "Projetos internos",
+    description: "Organize frentes, responsáveis e prioridades sem perder o contexto operacional.",
   },
   {
-    label: "Tarefas e checklist",
-    description: "Acompanhe execução, responsáveis e pendências em um único fluxo.",
+    label: "Backlog e tarefas",
+    description: "Acompanhe execução, checklist e pendências em um fluxo claro para a squad.",
   },
   {
-    label: "Prazos e entregas",
-    description: "Deixe visível o que precisa avançar antes da próxima entrega.",
+    label: "Sprints e fluxos",
+    description: "Mantenha entregas, dependências e processos técnicos visíveis no mesmo painel.",
   },
 ];
 
 const workspaceHighlights = [
   {
-    title: "Quadros de execução",
-    description: "Veja o que está em backlog, em andamento, em revisão e concluído.",
+    title: "Quadros operacionais",
+    description: "Visualize backlog, execução, revisão e concluído por projeto ou sprint.",
     icon: ViewKanbanRoundedIcon,
   },
   {
-    title: "Checklist e detalhe",
-    description: "Abra a tarefa e acompanhe descrição, comentários e progresso da entrega.",
+    title: "Detalhe de tarefa",
+    description: "Abra a tarefa e acompanhe contexto, comentários, checklist e próximos passos.",
     icon: TaskAltRoundedIcon,
   },
   {
-    title: "Prazos e acompanhamento",
-    description: "Centralize sprints, calendário e leitura do andamento para o grupo e a orientadora.",
+    title: "Calendário e rituais",
+    description: "Centralize sprints, prazos e marcos internos da squad de TI.",
     icon: EventNoteRoundedIcon,
   },
 ];
@@ -112,7 +113,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
               width: 320,
               height: 320,
               borderRadius: "50%",
-              background: "rgba(93, 5, 255, 0.14)",
+              background: "rgba(65, 108, 228, 0.14)",
               filter: "blur(80px)",
               pointerEvents: "none",
             },
@@ -123,7 +124,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
               width: 240,
               height: 240,
               borderRadius: "50%",
-              background: "rgba(255, 187, 0, 0.12)",
+              background: "rgba(212, 87, 104, 0.12)",
               filter: "blur(60px)",
               pointerEvents: "none",
             },
@@ -135,23 +136,23 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                 variant="overline"
                 sx={{ color: "primary.light", letterSpacing: "0.18em" }}
               >
-                ROLEZITO WORKSPACE
+                {appBrand.name.toUpperCase()}
               </Typography>
               <Typography variant="h1" sx={{ mt: 1 }}>
-                Gestão do projeto Rolezito em um só lugar
+                Operação da squad de TI em um só lugar
               </Typography>
               <Typography color="text.secondary" sx={{ mt: 2, maxWidth: 560 }}>
-                Entre no workspace que centraliza projetos, tarefas, sprints,
-                prazos e responsáveis do Rolezito para manter o grupo alinhado
+                Acesse a plataforma interna que reúne projetos, tarefas, sprints,
+                fluxos e documentação visual para manter a operação da squad alinhada
                 do planejamento à entrega.
               </Typography>
             </Box>
 
             <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
-              <Chip label="Projeto Rolezito" />
-              <Chip label="Execução do grupo" />
-              <Chip label="Sprints e prazos" />
-              <Chip label="Acompanhamento da orientadora" />
+              <Chip label="Projetos internos" />
+              <Chip label="Backlog e sprints" />
+              <Chip label="Fluxos operacionais" />
+              <Chip label="Documentação visual" />
             </Stack>
 
             <Box
@@ -193,11 +194,11 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             >
               <Stack spacing={2}>
                 <Box>
-                  <Typography variant="h3">Entrar no workspace do Rolezito</Typography>
+                  <Typography variant="h3">Entrar no {appBrand.name}</Typography>
                   <Typography color="text.secondary" sx={{ mt: 0.75 }}>
                     {showDevelopmentAccessPanel
-                      ? "Use um dos acessos disponíveis para acompanhar a gestão do projeto neste ambiente local."
-                      : "Use seu e-mail do grupo e a senha cadastrada pela administração para acessar o projeto."}
+                      ? "Use um dos acessos locais disponíveis para validar fluxos, gestão de demandas e acompanhamento interno."
+                      : "Use seu e-mail da plataforma e a senha cadastrada pela administração para acessar o ambiente interno."}
                   </Typography>
                 </Box>
 
@@ -209,7 +210,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                       name="email"
                       type="email"
                       label="E-mail"
-                      placeholder="seu.nome@rolezito.com"
+                      placeholder={`seu.nome@${appBrand.accessDomain}`}
                       required
                       fullWidth
                     />
@@ -239,7 +240,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             sx={{
               p: { xs: 3, md: 4 },
               background:
-                "linear-gradient(180deg, rgba(93, 5, 255, 0.08), rgba(255, 255, 255, 0.01)), var(--mui-palette-background-paper)",
+                "linear-gradient(180deg, rgba(65, 108, 228, 0.08), rgba(255, 255, 255, 0.01)), var(--mui-palette-background-paper)",
             }}
           >
             <Stack spacing={2.5}>
@@ -248,14 +249,14 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                   variant="overline"
                   sx={{ color: "secondary.main", letterSpacing: "0.16em" }}
                 >
-                  GESTÃO DO ROLEZITO
+                  OPERAÇÃO INTERNA
                 </Typography>
                 <Typography variant="h3" sx={{ mt: 1 }}>
                   O que você acompanha aqui
                 </Typography>
                 <Typography color="text.secondary" sx={{ mt: 0.75 }}>
-                  O login dá acesso ao painel que organiza execução, entregas e
-                  leitura do andamento do projeto em um único lugar.
+                  O acesso libera o painel central da squad para execução,
+                  documentação e acompanhamento de entregas em um único lugar.
                 </Typography>
               </Box>
               <Stack spacing={1.5}>
@@ -277,7 +278,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                             display: "grid",
                             placeItems: "center",
                             color: "secondary.main",
-                            bgcolor: "rgba(93, 5, 255, 0.10)",
+                            bgcolor: "rgba(65, 108, 228, 0.10)",
                             flexShrink: 0,
                           }}
                         >
@@ -296,7 +297,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
               </Stack>
               <Paper
                 variant="outlined"
-                sx={{ p: 2.25, bgcolor: "rgba(255, 187, 0, 0.06)" }}
+                sx={{ p: 2.25, bgcolor: "rgba(212, 87, 104, 0.08)" }}
               >
                 <Stack direction="row" spacing={1.5} alignItems="flex-start">
                   <Box
@@ -307,17 +308,17 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                       display: "grid",
                       placeItems: "center",
                       color: "primary.main",
-                      bgcolor: "rgba(255, 187, 0, 0.12)",
+                      bgcolor: "rgba(212, 87, 104, 0.14)",
                       flexShrink: 0,
                     }}
                   >
                     <VisibilityRoundedIcon fontSize="small" />
                   </Box>
                   <Box>
-                    <Typography fontWeight={700}>Visão compartilhada do andamento</Typography>
+                    <Typography fontWeight={700}>Leitura operacional compartilhada</Typography>
                     <Typography color="text.secondary" sx={{ mt: 0.5 }}>
-                      O grupo acompanha prioridades e a orientadora enxerga o
-                      progresso sem depender de atualizações soltas.
+                      A squad acompanha prioridades, riscos e andamento sem depender
+                      de atualizações soltas ou contexto disperso.
                     </Typography>
                   </Box>
                 </Stack>

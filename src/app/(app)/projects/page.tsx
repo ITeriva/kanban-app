@@ -18,6 +18,7 @@ import { EntityCard } from "@/components/ui/entity-card";
 import { PageHeader } from "@/components/ui/page-header";
 import { SegmentedTabs } from "@/components/ui/segmented-tabs";
 import { StatusBadge } from "@/components/ui/status-badge";
+import { appBrand } from "@/lib/branding";
 import { formatDate } from "@/lib/formatters";
 import { requireUser } from "@/server/auth/session";
 import { canCreateProject } from "@/server/permissions";
@@ -62,9 +63,9 @@ export default async function ProjectsPage({ searchParams }: ProjectsPageProps) 
     <Stack spacing={3}>
       <PageHeader
         eyebrow="Projetos"
-        title="Projetos do TCC"
-        description="Acompanhe as frentes do trabalho, responsáveis e prazos em quadro, cronograma ou lista."
-        chips={["Quadro e lista", "Prazos do grupo", "Acompanhamento por status"]}
+        title="Projetos da squad"
+        description="Acompanhe frentes internas, responsáveis e prazos em quadro, cronograma ou lista."
+        chips={["Quadro e lista", "Prazos da operação", "Acompanhamento por status"]}
         actions={
           canCreate ? (
             <Button
@@ -105,7 +106,7 @@ function renderProjectsView(
         {projects.map((project) => (
           <EntityCard
             key={project.id}
-            eyebrow={project.team?.name ?? "Grupo do TCC"}
+            eyebrow={project.team?.name ?? appBrand.workspaceLabel}
             title={project.name}
             description={project.summary}
             actions={<StatusBadge status={project.status} />}

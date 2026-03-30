@@ -105,7 +105,7 @@ export function TaskCard({ task, href, contextLabel }: TaskCardProps) {
         textDecoration: "none",
         transition: "transform 180ms ease, border-color 180ms ease, background-color 180ms ease",
         "&:hover": {
-          borderColor: "rgba(93, 5, 255, 0.22)",
+          borderColor: "rgba(65, 108, 228, 0.22)",
           bgcolor: "action.hover",
           transform: "translateY(-1px)",
         },

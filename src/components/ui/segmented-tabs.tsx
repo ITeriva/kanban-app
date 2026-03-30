@@ -67,7 +67,7 @@ export function SegmentedTabs({ value, items }: SegmentedTabsProps) {
                     px: 0.75,
                     py: 0.2,
                     borderRadius: 999,
-                    bgcolor: selected ? "rgba(93, 5, 255, 0.12)" : "action.hover",
+                    bgcolor: selected ? "rgba(65, 108, 228, 0.12)" : "action.hover",
                     color: selected ? "secondary.main" : "text.secondary",
                     fontSize: 12,
                     textAlign: "center",
